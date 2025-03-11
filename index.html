@@ -25,7 +25,7 @@
 
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
-  <style>
+  <!-- <style>
   /* Mega Menu Styling */
   .product-menu-item {
     position: relative;
@@ -64,8 +64,78 @@
       left: 40%;
     }
   }
+  </style> -->
+  <style>
+    /* Mega Menu Styling */
+    .product-menu-item {
+      position: relative;
+    }
+    
+    .mega-menu {
+      position: absolute;
+      left: 100%;  /* Hiển thị bên phải */
+      top: 0;
+      width: 600px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      
+      /* Hiệu ứng mượt mà */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      transform: translateX(-10px);
+    }
+  
+    /* Hiển thị mega menu khi hover */
+    .product-menu-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  
+    /* Căn chỉnh giống với dropdown menu của Bootstrap */
+    .mega-menu .container {
+      padding: 0.5rem 0;
+    }
+  
+    .mega-menu .dropdown-header {
+      font-weight: bold;
+      color: #007bff;
+      padding: 0.5rem 1rem;
+    }
+  
+    .mega-menu .dropdown-item {
+      clear: both;
+      font-weight: 400;
+      padding: 0.25rem 1rem;
+      color: #212529;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+    }
+  
+    .mega-menu .dropdown-item:hover {
+      color: #1e2125;
+      background-color: #f8f9fa;
+    }
+  
+    /* Media query cho màn hình từ 768px đến 992px */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      /* Điều chỉnh kích thước của các dropdown menu */
+      .dropdown-menu {
+        width: 250px;
+      }
+      
+      /* Điều chỉnh mega-menu cho màn hình trung bình */
+      .mega-menu {
+        left: 40%;
+        width: 450px;
+      }
+    }
   </style>
-
 </head>
 
 <body class="index-page bg-gray-200">
@@ -148,7 +218,7 @@
                             <i class="material-symbols-rounded opacity-6 me-2 text-md">view_day</i>
                             Danh mục sản phẩm 
                           </a>
-                          <div class="mega-menu py-2 ">
+                          <div class="mega-menu p-2 ">
                             <div class="container">
                               <div class="row">
                                 <div class="col-md-4">

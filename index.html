@@ -26,29 +26,44 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="./assets/css/material-kit.css?v=3.1.0" rel="stylesheet" />
   <style>
-    /* Mega Menu Styling */
+  /* Mega Menu Styling */
+  .product-menu-item {
+    position: relative;
+  }
+  
+  .mega-menu {
+    position: absolute;
+    left: 100%;  /* Hiển thị bên phải */
+    top: 0;
+    width: 600px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000; 
+  }
+
+  /* Hiển thị mega menu khi hover */
+  .product-menu-item:hover .mega-menu {
+    display: block;
+  }
+
+  /* Căn chỉnh menu */
+  .dropdown-header {
+    font-weight: bold;
+    color: #007bff;
+    
+  }
+  /* Media query cho màn hình từ 768px đến 992px */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    /* Điều chỉnh kích thước của mega menu */
+    .dropdown-menu {
+      width: 250px; /* Giảm kích thước để không bị tràn */
+    }
     .mega-menu {
-      position: absolute;
-      left: 100%;  /* Hiển thị bên phải */
-      top: 0;
-      width: 600px; /* Điều chỉnh độ rộng */
-      background: white;
-      border-radius: 5px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      display: none; /* Ẩn submenu mặc định */
+      left: 40%;
     }
-
-    /* Hiển thị mega menu khi hover */
-    .nav-item.dropdown:hover .mega-menu {
-      display: block;
-    }
-
-    /* Căn chỉnh menu */
-    .dropdown-header {
-      font-weight: bold;
-      color: #007bff;
-    }
-
+  }
   </style>
 
 </head>
@@ -125,39 +140,104 @@
                       aria-labelledby="dropdownMenuBlocks">
 
                       <div class="d-none d-md-block">
+  
 
-                        <li class="nav-item dropdown dropdown-hover dropdown-subitem z-index-3">
-                          <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                            <div class="w-100 d-flex align-items-center justify-content-between">
-                              <div>
-                                <h6
-                                  class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                                  Attention Catchers</h6>
-                                <span class="text-sm">See all examples</span>
-                              </div>
-                              <img src="./assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                            </div>
+                        <!-- Phần menu đã được sửa -->
+                        <li class="nav-item dropdown-hover product-menu-item">
+                          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-semibold" id="productMenu">
+                            <i class="material-symbols-rounded opacity-6 me-2 text-md">view_day</i>
+                            Danh mục sản phẩm 
                           </a>
-                          <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                            <a class="dropdown-item ps-3 border-radius-md mb-1"
-                              href="./sections/attention-catchers/alerts.html">
-                              Alerts
-                            </a>
-                            <a class="dropdown-item ps-3 border-radius-md mb-1"
-                              href="./sections/attention-catchers/modals.html">
-                              Modals
-                            </a>
+                          <div class="mega-menu py-2 ">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Linh kiện máy tính</h6>
+                                  <a class="dropdown-item" href="#">CPU</a>
+                                  <a class="dropdown-item" href="#">Mainboard</a>
+                                  <a class="dropdown-item" href="#">RAM</a>
+                                  <a class="dropdown-item" href="#">Ổ cứng SSD/HDD</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Phụ kiện</h6>
+                                  <a class="dropdown-item" href="#">Bàn phím</a>
+                                  <a class="dropdown-item" href="#">Chuột gaming</a>
+                                  <a class="dropdown-item" href="#">Tai nghe</a>
+                                  <a class="dropdown-item" href="#">Loa & Micro</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Màn hình & Laptop</h6>
+                                  <a class="dropdown-item" href="#">Màn hình 24 inch</a>
+                                  <a class="dropdown-item" href="#">Màn hình 27 inch</a>
+                                  <a class="dropdown-item" href="#">Laptop gaming</a>
+                                  <a class="dropdown-item" href="#">Laptop văn phòng</a>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Linh kiện máy tính</h6>
+                                  <a class="dropdown-item" href="#">CPU</a>
+                                  <a class="dropdown-item" href="#">Mainboard</a>
+                                  <a class="dropdown-item" href="#">RAM</a>
+                                  <a class="dropdown-item" href="#">Ổ cứng SSD/HDD</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Phụ kiện</h6>
+                                  <a class="dropdown-item" href="#">Bàn phím</a>
+                                  <a class="dropdown-item" href="#">Chuột gaming</a>
+                                  <a class="dropdown-item" href="#">Tai nghe</a>
+                                  <a class="dropdown-item" href="#">Loa & Micro</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Màn hình & Laptop</h6>
+                                  <a class="dropdown-item" href="#">Màn hình 24 inch</a>
+                                  <a class="dropdown-item" href="#">Màn hình 27 inch</a>
+                                  <a class="dropdown-item" href="#">Laptop gaming</a>
+                                  <a class="dropdown-item" href="#">Laptop văn phòng</a>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </li>
-
-
-                        <li class="nav-item dropdown dropdown-hover dropdown-subitem z-index-3">
-                          
-                          <a class="nav-link dropdown-toggle" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Danh mục sản phẩm
+                        <li class="nav-item dropdown-hover product-menu-item">
+                          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-semibold" id="productMenu">
+                            <i class="material-symbols-rounded opacity-6 me-2 text-md">view_day</i>
+                            Danh mục sản phẩm 
                           </a>
-                          <div class="dropdown-menu mega-menu p-3 start-0" aria-labelledby="megaMenu">
+                          <div class="mega-menu p-3">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Linh kiện máy tính</h6>
+                                  <a class="dropdown-item" href="#">CPU</a>
+                                  <a class="dropdown-item" href="#">Mainboard</a>
+                                  <a class="dropdown-item" href="#">RAM</a>
+                                  <a class="dropdown-item" href="#">Ổ cứng SSD/HDD</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Phụ kiện</h6>
+                                  <a class="dropdown-item" href="#">Bàn phím</a>
+                                  <a class="dropdown-item" href="#">Chuột gaming</a>
+                                  <a class="dropdown-item" href="#">Tai nghe</a>
+                                  <a class="dropdown-item" href="#">Loa & Micro</a>
+                                </div>
+                                <div class="col-md-4">
+                                  <h6 class="dropdown-header">Màn hình & Laptop</h6>
+                                  <a class="dropdown-item" href="#">Màn hình 24 inch</a>
+                                  <a class="dropdown-item" href="#">Màn hình 27 inch</a>
+                                  <a class="dropdown-item" href="#">Laptop gaming</a>
+                                  <a class="dropdown-item" href="#">Laptop văn phòng</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown-hover product-menu-item">
+                          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-semibold" id="productMenu">
+                            <i class="material-symbols-rounded opacity-6 me-2 text-md">view_day</i>
+                            Danh mục sản phẩm 
+                          </a>
+                          <div class="mega-menu p-3">
                             <div class="container">
                               <div class="row">
                                 <div class="col-md-4">
